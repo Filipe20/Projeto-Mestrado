@@ -1,0 +1,8 @@
+set (CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 2.8)
+project( prv )
+find_package( OpenCV REQUIRED)
+include_directories(include)
+include_directories(src)
+add_executable(prv src/main.cpp src/ga.cpp src/mapa.cpp include/ga.h include/mapa.h)
+target_link_libraries( prv ${OpenCV_LIBS})

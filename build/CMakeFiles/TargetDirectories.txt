@@ -1,0 +1,3 @@
+/mnt/d/Documents/Mestrado/Projeto/linux/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/Documents/Mestrado/Projeto/linux/build/CMakeFiles/edit_cache.dir
+/mnt/d/Documents/Mestrado/Projeto/linux/build/CMakeFiles/prv.dir
