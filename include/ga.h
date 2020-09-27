@@ -65,7 +65,7 @@ private:
     float fator_mutacao, fator_cruzamento;
     int tam_populacao, numero_geracoes, tam_torneio;
     int tamanho = 0;
-    int n_cruzamento = 30;
+    int n_cruzamento = 25;
     vector<int> pontos;
 public:
     //-------------Processo
@@ -75,6 +75,7 @@ public:
     void gerar_populacao_inicial();
     //-------------Sele��o 
     void elitismo();
+    void elitizar();
     void torneio();
     void fitness();
     void pior();

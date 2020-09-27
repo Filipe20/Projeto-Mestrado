@@ -13,12 +13,15 @@ int main(void)
 	G.desvio_pontos();
 	G.definir_escola();
 	//ga(mapa m, float mut, float cru, int pop, int n_ger, int ntorneio)
-	ga GA(G, .25, .7, 100, 500, 7);
-	out << "geracao,individuo,d_veiculo1,d_veiculo2,d_veiculo3,d_veiculo4,d_total,media,desvio,elite,pior,med" << endl;
-	GA.processo(out);
-	G.plotar(img, .45, false);
-	GA.plotar(img, .45);
-	GA.imprimir_elite();
+	//for (size_t i = 0; i < 5; i++)
+	{
+		ga GA(G, .05, .8, 100, 1000, 6);
+		out << "geracao,individuo,d_veiculo1,d_veiculo2,d_veiculo3,d_veiculo4,d_total,media,desvio,elite,pior,med" << endl;
+		GA.processo(out);
+		G.plotar(img, .45, false);
+		GA.plotar(img, .45);
+		GA.imprimir_elite();
+	}
 	imwrite("../imagens/Rotas.png", img);
 	out.close();
 	return (0);

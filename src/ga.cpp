@@ -13,12 +13,6 @@ ga::ga(mapa m, float mut, float cru, int pop, int n_ger, int ntorneio)
 	tam_torneio = ntorneio;
 	int tam = 40;
 	srand(time(NULL));
-	for (size_t i = 0; i < 3; i++)
-	{
-		pontos.push_back(rand() % tam * .85 + tam * .15);
-		//pontos.push_back(tam / 2);
-	}
-	sort(pontos.begin(), pontos.end());
 }
 void ga::processo(ofstream &out)
 {
@@ -36,10 +30,12 @@ void ga::processo(ofstream &out)
 		fitness();
 		cruzamento();
 		mutacao();
+		elitizar();
 		//imprimir_objetivos();
-		//imprimir_elite();
+		//imprimir_populacao();
+		imprimir_elite();
 		imprimir_arquivos(out, ger);
-		//cout << endl;
+		cout << endl;
 	}
 
 }
@@ -104,6 +100,11 @@ void ga::elitismo()
 		}
 	}
 }
+void ga::elitizar()
+{
+	int x = rand() % populacao.size();
+	populacao[x] = elite;
+}
 void ga::pior()
 {
 	pior_valor = fit[0];
@@ -134,6 +135,8 @@ void ga::torneio()
 		a = rand() % tam_populacao;
 		b = a;
 		aux = fit[a];
+		if(double(rand() % 100) / 100  < .75)
+		{
 		for (size_t j = 1; j < tam_torneio; j++)
 		{
 			a = rand() % tam_populacao;
@@ -142,6 +145,7 @@ void ga::torneio()
 				aux = fit[a];
 				b = a;
 			}
+		}
 		}
 		selec.push_back(populacao[b]);
 	}
@@ -250,7 +254,7 @@ void ga::cruzamento(int x, int y)
 void ga::mutacao()
 {
 	double taxa;
-	taxa = (rand() % 100) / 100;
+	//taxa = (rand() % 100) / 100;
 	for (size_t i = 0; i < populacao.size(); i = i + 2)
 	{
 		mutacao(i, taxa);
@@ -261,6 +265,7 @@ void ga::mutacao(int x, double taxa)
 	int aux, par;
 	for (size_t i = 0; i < populacao[x].ind.size(); i++)
 	{
+		taxa = (rand() % 100) / 100;
 		if (taxa < fator_mutacao)
 		{
 			par = rand() % populacao[x].ind.size();
