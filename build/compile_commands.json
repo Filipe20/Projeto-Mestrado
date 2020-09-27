@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/mnt/d/Documents/Mestrado/Projeto/linux/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/d/Documents/Mestrado/Projeto/linux/include -I/mnt/d/Documents/Mestrado/Projeto/linux/src -isystem /usr/include/opencv4  -g   -std=gnu++11 -o CMakeFiles/prv.dir/src/main.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp",
+  "file": "/mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp"
+},
+{
+  "directory": "/mnt/d/Documents/Mestrado/Projeto/linux/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/d/Documents/Mestrado/Projeto/linux/include -I/mnt/d/Documents/Mestrado/Projeto/linux/src -isystem /usr/include/opencv4  -g   -std=gnu++11 -o CMakeFiles/prv.dir/src/ga.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp",
+  "file": "/mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp"
+},
+{
+  "directory": "/mnt/d/Documents/Mestrado/Projeto/linux/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/d/Documents/Mestrado/Projeto/linux/include -I/mnt/d/Documents/Mestrado/Projeto/linux/src -isystem /usr/include/opencv4  -g   -std=gnu++11 -o CMakeFiles/prv.dir/src/mapa.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp",
+  "file": "/mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp"
+}
+]

@@ -60,41 +60,41 @@ include CMakeFiles/prv.dir/flags.make
 CMakeFiles/prv.dir/src/main.cpp.o: CMakeFiles/prv.dir/flags.make
 CMakeFiles/prv.dir/src/main.cpp.o: ../src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Documents/Mestrado/Projeto/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/prv.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prv.dir/src/main.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prv.dir/src/main.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp
 
 CMakeFiles/prv.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prv.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp > CMakeFiles/prv.dir/src/main.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp > CMakeFiles/prv.dir/src/main.cpp.i
 
 CMakeFiles/prv.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prv.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp -o CMakeFiles/prv.dir/src/main.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Documents/Mestrado/Projeto/linux/src/main.cpp -o CMakeFiles/prv.dir/src/main.cpp.s
 
 CMakeFiles/prv.dir/src/ga.cpp.o: CMakeFiles/prv.dir/flags.make
 CMakeFiles/prv.dir/src/ga.cpp.o: ../src/ga.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Documents/Mestrado/Projeto/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/prv.dir/src/ga.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prv.dir/src/ga.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prv.dir/src/ga.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp
 
 CMakeFiles/prv.dir/src/ga.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prv.dir/src/ga.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp > CMakeFiles/prv.dir/src/ga.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp > CMakeFiles/prv.dir/src/ga.cpp.i
 
 CMakeFiles/prv.dir/src/ga.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prv.dir/src/ga.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp -o CMakeFiles/prv.dir/src/ga.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Documents/Mestrado/Projeto/linux/src/ga.cpp -o CMakeFiles/prv.dir/src/ga.cpp.s
 
 CMakeFiles/prv.dir/src/mapa.cpp.o: CMakeFiles/prv.dir/flags.make
 CMakeFiles/prv.dir/src/mapa.cpp.o: ../src/mapa.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Documents/Mestrado/Projeto/linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/prv.dir/src/mapa.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prv.dir/src/mapa.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prv.dir/src/mapa.cpp.o -c /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp
 
 CMakeFiles/prv.dir/src/mapa.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prv.dir/src/mapa.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp > CMakeFiles/prv.dir/src/mapa.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp > CMakeFiles/prv.dir/src/mapa.cpp.i
 
 CMakeFiles/prv.dir/src/mapa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prv.dir/src/mapa.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp -o CMakeFiles/prv.dir/src/mapa.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp -o CMakeFiles/prv.dir/src/mapa.cpp.s
 
 # Object files for target prv
 prv_OBJECTS = \
