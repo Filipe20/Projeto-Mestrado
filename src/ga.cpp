@@ -85,7 +85,7 @@ void ga::fitness()
 	for (int i = 0; i < populacao.size(); i++)
 	{
 		funcao_objetivo(i);
-		fit.push_back(objetivos[i][populacao[i].veiculos.size()]);
+		fit.push_back(objetivos[i][4]); // Valor = funçao objetivo
 	}
 }
 void ga::elitismo()
@@ -135,7 +135,7 @@ void ga::torneio()
 		a = rand() % tam_populacao;
 		b = a;
 		aux = fit[a];
-		if(double(rand() % 100) / 100  < .75)
+		//if(double(rand() % 100) / 100  < .8) // probabilidade de escolhei o melhor 
 		{
 		for (size_t j = 1; j < tam_torneio; j++)
 		{
@@ -314,17 +314,24 @@ void ga::imprimir_arquivos(ofstream &out, int ger)
 	for (size_t i = 0; i < populacao.size(); i++)
 	{
 		out << ger <<"," << i;
-		for (size_t j = 0; j < objetivos[i].size(); j++)
+		//for (size_t j = 0; j < objetivos[i].size(); j++)
 		{
-			out <<","<<objetivos[i][j];
+		//	out <<","<<objetivos[i][j];
 		}
+		out <<","<<objetivos[i][4];
+		out <<","<<objetivos[i][5];
+		out <<","<<objetivos[i][6];
 		out << "," << elite_valor;
 		out << "," << pior_valor;
 		out << "," << media_valor;
 		out << endl;
 	}
 }
-
+void ga::plotar(Mat img, float a)
+{
+	elite.montar_rota();
+    m.plotar(elite.rota, img, a);
+}
 //------------------------------------//-----------------------------------------
 //------------------------------Funções Objetivo---------------------------------
 void ga::funcao_objetivo(int i)
@@ -358,9 +365,4 @@ void ga::funcao_objetivo(int i)
 	}
 	objetivo_aux.push_back(sqrt(variancia));
 	objetivos.push_back(objetivo_aux);
-}
-void ga::plotar(Mat img, float a)
-{
-	elite.montar_rota();
-    m.plotar(elite.rota, img, a);
 }
