@@ -40,6 +40,10 @@ vector
 ../include/ga.h
 /mnt/d/Documents/Mestrado/Projeto/linux/include/ga.h
 
+/mnt/d/Documents/Mestrado/Projeto/linux/src/mapa.cpp
+../include/mapa.h
+/mnt/d/Documents/Mestrado/Projeto/linux/include/mapa.h
+
 /usr/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
 /usr/include/opencv4/opencv2/opencv2/core.hpp

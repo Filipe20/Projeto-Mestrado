@@ -37,7 +37,6 @@ void ga::processo(ofstream &out)
 		imprimir_arquivos(out, ger);
 		cout << endl;
 	}
-
 }
 individuo ga::gerar_inicial()
 {
@@ -82,8 +81,10 @@ void ga::fitness()
 {
 	fit.clear();
 	objetivos.clear();
+	distancias.clear();
 	for (int i = 0; i < populacao.size(); i++)
 	{
+		set_veiculo(i);
 		funcao_objetivo(i);
 		fit.push_back(objetivos[i][4]); // Valor = funçao objetivo
 	}
@@ -125,7 +126,7 @@ void ga::media()
 	}
 	media_valor /= fit.size();
 }
-void ga::torneio()
+void ga::torneio2()
 {
 	int a, b;
 	double aux;
@@ -148,6 +149,43 @@ void ga::torneio()
 		}
 		}
 		selec.push_back(populacao[b]);
+	}
+	populacao = selec;
+}
+void ga::torneio()
+{
+	int a, b;
+	double aux;
+	int ganhadores = 1;
+	vector<individuo> selec;
+	vector<pair<double, int>> podio;
+	for (size_t i = 0; i < tam_populacao; i++)
+	{
+		for (size_t j = 0; j < tam_torneio; j++)
+		{
+			a = rand() % tam_populacao;
+			podio.push_back(make_pair(fit[a], a));
+		}
+		sort(podio.begin(), podio.end());
+		double ant = podio[0].first;
+		if(selec.size() < tam_populacao)
+		selec.push_back(populacao[podio[0].second]);
+		for (size_t j = 1; j < ganhadores; j++)
+		{
+			if(ant != podio[j].first)
+			{
+				if(selec.size() < tam_populacao)
+				selec.push_back(populacao[podio[j].second]);
+				ant = podio[j].first;
+			}
+			else
+			{ 
+				j--;
+			}
+		//	cout << podio[j].first << " ";	
+		}
+		//cout << endl;
+		podio.clear();
 	}
 	populacao = selec;
 }
@@ -275,6 +313,28 @@ void ga::mutacao(int x, double taxa)
 		}
 	}
 }
+void ga::set_veiculo(int a)
+{
+	double melhor;
+	int aux, x;
+    for (size_t i = 0; i < populacao[i].veiculos.size(); i++)
+	{
+		int aux;
+		int x = i; 
+		melhor = m.get_distancia(populacao[a].ind[i*populacao[a].nc_v], populacao[a].veiculos[i]);
+		for (size_t j = i+1; j < populacao[a].veiculos.size(); j++)
+		{
+			if(melhor > m.get_distancia(populacao[a].ind[i*populacao[a].nc_v], populacao[a].veiculos[j]))
+			{
+				melhor = m.get_distancia(populacao[a].ind[i*populacao[a].nc_v], populacao[a].veiculos[j]);
+				x = j;
+			}
+    	}	
+		aux = populacao[a].veiculos[i];
+		populacao[a].veiculos[i] = populacao[a].veiculos[x];
+		populacao[a].veiculos[x] = aux;
+    }
+}
 //---------------------------Funções de visualização-----------------------
 void ga::imprimir_populacao()
 {
@@ -311,16 +371,16 @@ void ga::imprimir_objetivos()
 }
 void ga::imprimir_arquivos(ofstream &out, int ger)
 {
-	for (size_t i = 0; i < populacao.size(); i++)
+	//for (size_t i = 0; i < populacao.size(); i++)
 	{
-		out << ger <<"," << i;
+		out << ger;
 		//for (size_t j = 0; j < objetivos[i].size(); j++)
 		{
 		//	out <<","<<objetivos[i][j];
 		}
-		out <<","<<objetivos[i][4];
-		out <<","<<objetivos[i][5];
-		out <<","<<objetivos[i][6];
+		//out <<","<<objetivos[i][4];
+		//out <<","<<objetivos[i][5];
+		//out <<","<<objetivos[i][6];
 		out << "," << elite_valor;
 		out << "," << pior_valor;
 		out << "," << media_valor;

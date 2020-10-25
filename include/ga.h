@@ -60,6 +60,7 @@ private:
     vector<individuo> populacao;
     individuo elite;
     vector<double> fit;
+    vector<double> distancias;
     vector<vector<double>> objetivos;
     double elite_valor, pior_valor, media_valor;
     float fator_mutacao, fator_cruzamento;
@@ -76,10 +77,12 @@ public:
     //-------------Sele��o 
     void elitismo();
     void elitizar();
+    void torneio2();
     void torneio();
     void fitness();
     void pior();
     void media();
+    void set_veiculo(int);
     //-------------Operadores Gen�ticos
     void cruzamento();
     void cruzamento(int , int);
@@ -97,5 +100,5 @@ public:
     void funcao_objetivo(int);
     void media(int);
     void desvio_padrao(int);
-    
+    void distancia_total(int);
 };

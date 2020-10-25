@@ -7,12 +7,12 @@ mapa::mapa(string pts, string dist)
     ifstream file2(dist);
     if (!file)
     {
-        cout << "erro" << endl;
+        cout << "erro1" << endl;
         return;
     }
     if (!file2)
     {
-        cout << "erro" << endl;
+        cout << "erro2" << endl;
         return;
     }
     while (true)
@@ -85,7 +85,7 @@ void mapa::requisicao(ofstream &os)
 {
     os << "{\"location\":[";
     for (int i = 0; i < n_pontos; i++)
-        os << "[" << pontos[i].second << "," << pontos[i].first << "],";
+        os << "[" << pontos[i].first << "," << pontos[i].second << "],";
     os << "],\"metrics\":[\"distance\"],\"units\":\"km\"}" << endl;
 }
 double mapa::get_distancia(int v1, int v2)
@@ -131,6 +131,7 @@ int mapa::get_escola(int x)
 {
     return crianca_escola[x];
 }
+/*
 void mapa::plotar(vector<int> ind, Mat img, float a)
 {
     int b = 0, g = 0, r = 0, aux = 0;
@@ -139,7 +140,7 @@ void mapa::plotar(vector<int> ind, Mat img, float a)
             line(img, Point(500 + (abs(pontos[ind[i]].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[ind[i]].second) - media_pts.second) / (a * desvio_pts.second)),
                  Point(500 + (abs(pontos[ind[i+1]].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[ind[i + 1]].second) - media_pts.second) / (a * desvio_pts.second)),
                  Scalar(b, g, r));
-            if(ind[i+2] > n_crianca)
+            if(ind[i+2] >= n_crianca)
             {
                 i++;
                 aux++;
@@ -173,6 +174,53 @@ void mapa::plotar(Mat img, float a, bool b)
                 circle(img, Point(500 + (abs(pontos[i].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[i].second) - media_pts.second) / (a * desvio_pts.second)), 5, Scalar(0, 0, 0), CV_FILLED, 8, 0);
                 break;
             case 48:
+                circle(img, Point(500 + (abs(pontos[i].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[i].second) - media_pts.second) / (a * desvio_pts.second)), 5, Scalar(0, 0, 0), CV_FILLED, 8, 0);
+                break;
+            default:
+                break;
+            }
+        }
+        else
+            circle(img, Point(500 + (abs(pontos[i].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[i].second) - media_pts.second) / (a * desvio_pts.second)), 8, Scalar(0, 0, 255), CV_FILLED, 8, 0);
+    }
+}
+*/
+void mapa::plotar(vector<int> ind, Mat img, float a)
+{
+    int b = 0, g = 0, r = 0, aux = 0;
+        for (int i = 0; i < ind.size() - 1; i++)
+        {
+            line(img, Point(500 + (abs(pontos[ind[i]].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[ind[i]].second) - media_pts.second) / (a * desvio_pts.second)),
+                 Point(500 + (abs(pontos[ind[i+1]].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[ind[i + 1]].second) - media_pts.second) / (a * desvio_pts.second)),
+                 Scalar(b, g, r));
+            if(ind[i+2] >= n_crianca)
+            {
+                i++;
+                aux++;
+                if (aux == 1)
+                {b = 255; g = 0; r = 0;}
+                if (aux == 2)
+                {b = 0; g = 255; r = 0;}
+                if (aux == 3)
+                {b = 0; g = 0; r = 255;}
+            }    
+        }
+}
+void mapa::plotar(Mat img, float a, bool b)
+{
+    for (int i = 0; i < n_crianca + n_motor; i++)
+    {
+        if (i < n_crianca)
+        {
+            switch (crianca_escola[i])
+            {
+            case 48:
+                circle(img, Point(500 + (abs(pontos[i].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[i].second) - media_pts.second) / (a * desvio_pts.second)), 5, Scalar( 0, 0, 0), CV_FILLED, 8, 0);
+                break;
+            case 49:
+                circle(img, Point(500 + (abs(pontos[i].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[i].second) - media_pts.second) / (a * desvio_pts.second)), 5, Scalar(0, 0, 0), CV_FILLED, 8, 0);
+                break;
+            case 50:
                 circle(img, Point(500 + (abs(pontos[i].first) - media_pts.first) / (a * desvio_pts.first), 500 + (abs(pontos[i].second) - media_pts.second) / (a * desvio_pts.second)), 5, Scalar(0, 0, 0), CV_FILLED, 8, 0);
                 break;
             default:
